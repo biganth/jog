@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Code/Command</th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= on_the_spot_edit post, :name %></td>
+    <td><%= post.content %></td>
+    <td>
+    <%= link_to 'Destroy', post_path(post), :method => :delete, confirm: 'Are you sure?', :class => "btn btn-mini btn-danger" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
