@@ -14,6 +14,8 @@ Jog::Application.configure do
   config.action_controller.perform_caching = false
   config.cache_store = :dalli_store
 
+  config.action_mailer.default_url_options = { :host => 'jog.dev' }
+
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
