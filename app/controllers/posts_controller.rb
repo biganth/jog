@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+  caches_action :index, :show
+  autocomplete :post, :name
   can_edit_on_the_spot
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
+    @posts = Post.all_cached
+    @stats = Rails.cache.stats.first.last
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

@@ -62,7 +62,7 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
-    friendly_id (4.0.8)
+    friendly_id (4.0.9)
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -85,10 +85,15 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.19)
+    mocha (0.12.7)
+      metaclass (~> 0.0.1)
     mousetrap-rails (0.0.6)
-    multi_json (1.3.6)
+    multi_json (1.3.7)
     multipart-post (1.1.5)
+    nifty-generators (0.4.6)
+    oauth (0.4.7)
     oauth2 (0.8.0)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -98,9 +103,15 @@ GEM
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    omniauth-twitter (0.0.13)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     on_the_spot (1.0.1)
       json_pure (>= 1.4.6)
     orm_adapter (0.4.0)
@@ -121,6 +132,8 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails3-jquery-autocomplete (1.0.10)
+      rails (~> 3.0)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -172,11 +185,15 @@ DEPENDENCIES
   friendly_id
   haml-rails
   jquery-rails
+  mocha
   mousetrap-rails
+  nifty-generators
   omniauth-github!
+  omniauth-twitter
   on_the_spot
   pg
   rails (= 3.2.8)
+  rails3-jquery-autocomplete
   sass-rails (~> 3.2.3)
   simple_form
   thin

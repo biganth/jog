@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require on_the_spot
 //= require mousetrap
+//= require autocomplete-rails
 //= require bootstrap
 //= require rails.validations
 //= require_tree .
