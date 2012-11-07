@@ -1,7 +1,6 @@
 Jog::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
-  devise_for :users, :controllers => {:registrations => 'registrations'}
-  resources :authentications
+  devise_for :users
   root :to => 'posts#index'
   resources :posts do
     get :autocomplete_post_name, :on => :collection

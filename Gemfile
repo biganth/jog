@@ -22,7 +22,6 @@ gem 'mousetrap-rails'
 gem 'dalli'
 gem 'on_the_spot'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
-gem 'omniauth-twitter'
 gem 'rails3-jquery-autocomplete'
-gem "nifty-generators", :group => :development
-gem "mocha", :group => :test
+gem 'nifty-generators', :group => :development
+gem 'mocha', :group => :test
