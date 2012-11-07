@@ -194,7 +194,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.8)
   rails3-jquery-autocomplete
-  sass-rails (~> 3.2.3)
+  sass-rails (~> 3.2.5)
   simple_form
   thin
   uglifier (>= 1.0.3)
