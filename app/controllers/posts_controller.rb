@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  caches_action :index, :show
+  caches_action :index, :show, :expires_in => 15.seconds
   autocomplete :post, :name
   can_edit_on_the_spot
   # GET /posts
