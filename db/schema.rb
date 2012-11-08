@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20121108014626) do
 
-  create_table "authentications", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "posts", :force => true do |t|
     t.string   "name"
     t.string   "content"
@@ -35,11 +27,6 @@ ActiveRecord::Schema.define(:version => 20121108014626) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "provider"
@@ -50,3 +37,9 @@ ActiveRecord::Schema.define(:version => 20121108014626) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
+
+Through a series of events ;) I have a different db schema between my local dev db and heroku production db. I'm missing 2 columns on my user DB probably because I deleted a migration file and never migrated the heroku db. I deleted the migration for the user model as well but the user table still exists and I'm using it in the app. An easy solution is to use the heroku console and add the columns directly to the db but if I do that am I right in saying the missing migration will always mess things up?
+
+Best solution I think is to delete the current user model and table and recreate the migrations so I can migrate the db on Heroku.
+
+What do you think?
