@@ -1,6 +1,8 @@
 Jog::Application.routes.draw do
-  match '/auth/:provider/callback' => 'authentications#create'
-  devise_for :users
+  get   '/login', :to => 'sessions#new', :as => :login
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
+
   root :to => 'posts#index'
   resources :posts do
     get :autocomplete_post_name, :on => :collection
