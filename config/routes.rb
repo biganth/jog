@@ -14,3 +14,5 @@ Jog::Application.routes.draw do
     end
   end
 end
+
+
