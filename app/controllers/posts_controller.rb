@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all_cached
+    @posts = Post.where(:user_id => current_user)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -44,6 +44,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
