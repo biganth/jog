@@ -19,7 +19,6 @@
 	<div class="navbar-inner">
 	    <div id="user_nav" class="pull-right">
         	<% if current_user %>
-            <%= image_tag("#{current_user.photo}") %>
 			 Signed in as <%= current_user.name %>!
 			 <%= link_to "Sign out", signout_path %>
 			<% else %>
