@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["nickname"]
-      user.photo = auth["info"]["image"]
+      user.image = auth["info"]["image"]
     end
   end
 end
