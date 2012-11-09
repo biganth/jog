@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :id, :content, :name, :user_id, :created_at, :updated_at
+  attr_accessible :content, :name, :user_id
   after_save    :expire_post_all_cache
   after_destroy :expire_post_all_cache
   

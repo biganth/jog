@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts
+  attr_accessible :name, :image
   
   def self.from_omniauth(auth)
       where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
