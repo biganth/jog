@@ -25,3 +25,4 @@ gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators', :group => :development
 gem 'mocha', :group => :test
+gem 'newrelic_rpm'
