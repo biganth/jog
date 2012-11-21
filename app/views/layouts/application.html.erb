@@ -12,59 +12,61 @@
   <%= csrf_meta_tags %>
 
    <body>
-
+<div id='top_line'></div>
 	<div class="container">
-	<div class="row">
-	<div class="navbar">
-	<div class="navbar-inner">
-	    <div id="user_nav" class="pull-right">
-        	<% if current_user %>
-            <%= image_tag("#{current_user.image}", :height => '50', :width => '50') %>
-			<%= current_user.name %>
-			 <%= link_to "Sign out", signout_path %>
-			<% else %>
-			 <%= link_to "Sign in with Github", "/auth/github" %>
-			<% end %>
-	    </div>
+		<div class="row">
+			
+			<div id='tag' class="span9">
+			  <p class="lead">use <span class="logo">Jog</span> to quickly save & recall code</p>
+		    </div>
+		
+			<div id ='sign-in' class="span3" class="pull-right">
+	        	<% if current_user %>
+	            <%= image_tag("#{current_user.image}", :height => '50', :width => '50') %>
+				<%= current_user.name %>
+				 <%= link_to "Sign out", signout_path %>
+				<% else %>
+				<span><%= image_tag("github_icon.png", :height => '30', :width => '30') %></span>
+				 <%= link_to "Sign in with Github", "/auth/github" %>
+				<% end %>
+		    </div>
+		
+			
+	
+		
 
-	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </a>
-<div class="container">
-	      <!-- Be sure to leave the brand out there if you want it shown -->     
-	<a class="brand" href="/">Jog</a>
-<input type="text" data-provide="typeahead"  data-autocomplete="posts/autocomplete_post_name">
+					<div class="navbar">
+
+		<div class="container">
+			      <!-- Be sure to leave the brand out there if you want it shown -->     
 
 
-
-
-	      <!-- Everything you want hidden at 940px or less, place within here -->
-	      <div class="nav-collapse">
-	        <!-- .nav, .navbar-search, .navbar-form, etc -->
-	      </div>
-	    </div>
-	  </div>
-	</div>
+			      <!-- Everything you want hidden at 940px or less, place within here -->
+			      <div class="nav-collapse">
+			        <!-- .nav, .navbar-search, .navbar-form, etc -->
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
 	  <% flash.each do |name, msg| %>
-	    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+	    <div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
 		<a class="close" data-dismiss="alert">x</a>
 	      <%= msg  %>
 	    </div>
 	  <% end %>
+	    <div class="row">
 		<div class="span9"><%= yield %></div>
 		<div class="span3">
 			<h2>About jog</h2>
 			Jog helps you recall your frequently used code & commands.
 		</div>
 		<%= javascript_include_tag "application" %>
-		
+
 		<script>
 		Mousetrap.bind('n', function() { window.location = ('posts/new'); });
 		Mousetrap.bind('h', function() { window.location = ('/'); });
 		</script>
+
 </body>
 </html>

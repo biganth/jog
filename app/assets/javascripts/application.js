@@ -12,9 +12,32 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require autocomplete-rails
 //= require on_the_spot
 //= require mousetrap
-//= require autocomplete-rails
-//= require bootstrap
 //= require rails.validations
+//= require bootstrap-affix
+//= require bootstrap-alert
+//= require bootstrap-button
+//= require bootstrap-carousel
+//= require bootstrap-collapse
+//= require bootstrap-dropdown
+//= require bootstrap-modal
+//= require bootstrap-scrollspy
+//= require bootstrap-tab
+//= require bootstrap-tooltip
+//= require bootstrap-transition
 //= require_tree .
+
+<script>
+$(document).ready(function() {
+    $('#example').dataTable( {
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
+    } );
+} );
+
+$.extend( $.fn.dataTableExt.oStdClasses, {
+    "sWrapper": "dataTables_wrapper form-inline"
+} );
+
+</script>

@@ -1,7 +1,7 @@
 <table class="table table-striped">
   <tr>
     <th>Name</th>
-    <th>Code/Command</th>
+    <th></th>
     <th><!-- Button to trigger modal -->
 	<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
 
@@ -17,13 +17,16 @@
   </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= on_the_spot_edit post, :name %></td>
-    <td><%= post.content %></td>
+<tr>
+    
+	<td><strong><%= on_the_spot_edit post, :name, :class => 'post-name' %></strong>
+	<br /><%= post.content %>
     <td>
-    <%= link_to 'Destroy', post_path(post), :method => :delete, confirm: 'Are you sure?', :class => "btn btn-mini btn-danger" %></td>
+	<td align"right">
+    <%= image_tag("https://secure.gravatar.com/avatar/3e83df978155fb8fc25c8e3cbf24d05a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", :height => '30', :width => '30', :align => 'right') %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
+

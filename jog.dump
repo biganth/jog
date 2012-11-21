@@ -1,0 +1,271 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.1.4
+-- Dumped by pg_dump version 9.1.4
+-- Started on 2012-11-10 14:59:31 AST
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 166 (class 3079 OID 11907)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2141 (class 0 OID 0)
+-- Dependencies: 166
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 163 (class 1259 OID 352356)
+-- Dependencies: 5
+-- Name: posts; Type: TABLE; Schema: public; Owner: ad; Tablespace: 
+--
+
+CREATE TABLE posts (
+    id integer NOT NULL,
+    name character varying(255),
+    content character varying(255),
+    user_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.posts OWNER TO ad;
+
+--
+-- TOC entry 162 (class 1259 OID 352354)
+-- Dependencies: 5 163
+-- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: ad
+--
+
+CREATE SEQUENCE posts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.posts_id_seq OWNER TO ad;
+
+--
+-- TOC entry 2142 (class 0 OID 0)
+-- Dependencies: 162
+-- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ad
+--
+
+ALTER SEQUENCE posts_id_seq OWNED BY posts.id;
+
+
+--
+-- TOC entry 2143 (class 0 OID 0)
+-- Dependencies: 162
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ad
+--
+
+SELECT pg_catalog.setval('posts_id_seq', 18, true);
+
+
+--
+-- TOC entry 161 (class 1259 OID 352327)
+-- Dependencies: 5
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: ad; Tablespace: 
+--
+
+CREATE TABLE schema_migrations (
+    version character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.schema_migrations OWNER TO ad;
+
+--
+-- TOC entry 165 (class 1259 OID 352367)
+-- Dependencies: 5
+-- Name: users; Type: TABLE; Schema: public; Owner: ad; Tablespace: 
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    name character varying(255),
+    email character varying(255),
+    image character varying(255),
+    provider character varying(255),
+    uid character varying(255),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO ad;
+
+--
+-- TOC entry 164 (class 1259 OID 352365)
+-- Dependencies: 165 5
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: ad
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO ad;
+
+--
+-- TOC entry 2144 (class 0 OID 0)
+-- Dependencies: 164
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ad
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- TOC entry 2145 (class 0 OID 0)
+-- Dependencies: 164
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ad
+--
+
+SELECT pg_catalog.setval('users_id_seq', 1, false);
+
+
+--
+-- TOC entry 2126 (class 2604 OID 352359)
+-- Dependencies: 162 163 163
+-- Name: id; Type: DEFAULT; Schema: public; Owner: ad
+--
+
+ALTER TABLE ONLY posts ALTER COLUMN id SET DEFAULT nextval('posts_id_seq'::regclass);
+
+
+--
+-- TOC entry 2127 (class 2604 OID 352370)
+-- Dependencies: 164 165 165
+-- Name: id; Type: DEFAULT; Schema: public; Owner: ad
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- TOC entry 2134 (class 0 OID 352356)
+-- Dependencies: 163
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: ad
+--
+
+COPY posts (id, name, content, user_id, created_at, updated_at) FROM stdin;
+1	access rails logger when using pow	tail -f log/development.log	\N	2012-10-30 01:54:22	2012-10-30 01:54:22
+2	restart pow app	touch tmp/restart.txt	\N	2012-10-30 01:55:03	2012-10-30 01:55:03
+3	setup pow app	cd ~/.pow ln -s /path/to/myapp	\N	2012-10-30 01:55:24	2012-10-30 01:55:24
+4	add migration to existing model	rails g migration add_index_to_gists add_index :gists, :slug	\N	2012-10-30 13:19:01	2012-10-30 13:19:12
+5	migrate db	bundle exec rake db:migrate	\N	2012-10-30 13:22:31	2012-10-30 13:22:31
+6	add github repo	git remote add origin https://github.com/acdcwebs/jog.git	\N	2012-10-30 13:23:12	2012-10-30 13:23:12
+7	dropdown	<%= f.association :organization %>	\N	2012-10-30 13:25:38	2012-10-30 13:25:38
+8	access controllers in application.html.erb	 class ApplicationController < ActionController::Base       before_filter :load_application_wide_varibales        private        def load_application_wide_varibales         @var = Model.where :condition => "whatever"       end     end	\N	2012-10-31 15:53:34	2012-10-31 15:53:34
+9	?debug_assets=1	view each file being loaded in asset pipeline	\N	2012-10-31 16:29:50	2012-10-31 20:11:15
+10	git commit	git commit -m "Create a README."	\N	2012-10-31 22:24:37	2012-10-31 22:24:37
+11	git add all new or mdified files	git add --all	\N	2012-10-31 22:25:16	2012-10-31 22:25:16
+12	git add remote	git remote add origin https://github.com/Gregg/git-real.git	\N	2012-10-31 22:26:00	2012-10-31 22:26:00
+13	Heroku assets:precompile plugin	https://devcenter.heroku.com/articles/labs-user-env-compile	\N	2012-11-07 20:00:53	2012-11-07 20:00:53
+14	Heroku tail logs	heroku logs -t	\N	2012-11-08 13:38:28	2012-11-08 13:38:28
+15	Heroku load db:schema	heroku run rake db:schema:load	\N	2012-11-08 13:48:45	2012-11-08 13:48:45
+16	Heroku: connect to database	heroku pg:psql 	\N	2012-11-08 19:18:07	2012-11-08 19:18:07
+17	Postgres: show tables	\\d	\N	2012-11-08 19:18:54	2012-11-08 19:18:54
+18	Postgres: show columns	\\d table	\N	2012-11-08 19:19:24	2012-11-08 19:19:24
+\.
+
+
+--
+-- TOC entry 2133 (class 0 OID 352327)
+-- Dependencies: 161
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: ad
+--
+
+COPY schema_migrations (version) FROM stdin;
+20121108202353
+20121108213044
+\.
+
+
+--
+-- TOC entry 2135 (class 0 OID 352367)
+-- Dependencies: 165
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: ad
+--
+
+COPY users (id, name, email, image, provider, uid, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2130 (class 2606 OID 352364)
+-- Dependencies: 163 163
+-- Name: posts_pkey; Type: CONSTRAINT; Schema: public; Owner: ad; Tablespace: 
+--
+
+ALTER TABLE ONLY posts
+    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2132 (class 2606 OID 352375)
+-- Dependencies: 165 165
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: ad; Tablespace: 
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2128 (class 1259 OID 352330)
+-- Dependencies: 161
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: ad; Tablespace: 
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+
+
+--
+-- TOC entry 2140 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: public; Type: ACL; Schema: -; Owner: ad
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM ad;
+GRANT ALL ON SCHEMA public TO ad;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2012-11-10 14:59:31 AST
+
+--
+-- PostgreSQL database dump complete
+--
+

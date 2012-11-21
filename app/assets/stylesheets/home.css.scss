@@ -1,0 +1,34 @@
+#top_line {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 6px;
+  background: #e70800;
+  z-index: 2;
+}
+
+#search {
+	margin-top: 34px;
+	margin-right: 0px;
+}
+
+#tag {
+	margin-top: 37px;
+}
+
+#sign-in {
+	margin-top: 48px;
+}
+
+.logo {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 30px;
+	font-family: 'Rokkitt', serif;
+	font-size: 48px;
+	color: #e70800;
+}
+
+.table tbody tr:hover td {   
+}
