@@ -6261,7 +6261,7 @@ $.widget( "ui.autocomplete", {
 	              .append( "<a>" + t + "</a>" )
 	              .appendTo( ul );
 	      };
-	  }
+	  },
 
 	_move: function( direction, event ) {
 		if ( !this.menu.element.is(":visible") ) {
