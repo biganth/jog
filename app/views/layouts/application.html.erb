@@ -22,7 +22,7 @@
 		
 			<div id ='sign-in' class="span3" class="pull-right">
 	        	<% if current_user %>
-	            <%= image_tag("#{current_user.image}", :height => '50', :width => '50') %>
+	            <%= image_tag("#{current_user.image}", :height => '30', :width => '30') %>
 				<%= current_user.name %>
 				 <%= link_to "Sign out", signout_path %>
 				<% else %>
