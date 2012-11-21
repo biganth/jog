@@ -15,16 +15,5 @@
 //= require autocomplete-rails
 //= require on_the_spot
 //= require mousetrap
-//= require rails.validations
-//= require bootstrap-affix
-//= require bootstrap-alert
-//= require bootstrap-button
-//= require bootstrap-carousel
-//= require bootstrap-collapse
-//= require bootstrap-dropdown
-//= require bootstrap-modal
-//= require bootstrap-scrollspy
-//= require bootstrap-tab
-//= require bootstrap-tooltip
-//= require bootstrap-transition
+//= require bootstrap
 //= require_tree .
