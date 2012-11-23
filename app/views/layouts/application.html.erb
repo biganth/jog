@@ -15,35 +15,26 @@
 <div id='top_line'></div>
 	<div class="container">
 		<div class="row">
-			
-			<div id='tag' class="span9">
-			  <p class="lead">use <span class="logo">Jog</span> to quickly save & recall code</p>
-		    </div>
-		
-			<div id ='sign-in' class="span3" class="pull-right">
-	        	<% if current_user %>
-	            <%= image_tag("#{current_user.image}", :height => '30', :width => '30') %>
-				<%= current_user.name %>
-				 <%= link_to "Sign out", signout_path %>
-				<% else %>
-				<span><%= image_tag("github_icon.png", :height => '30', :width => '30') %></span>
-				 <%= link_to "Sign in with Github", "/auth/github" %>
-				<% end %>
-		    </div>
-
-					<div class="navbar">
-
-		<div class="container">
-			      <!-- Be sure to leave the brand out there if you want it shown -->     
-
-
-			      <!-- Everything you want hidden at 940px or less, place within here -->
-			      <div class="nav-collapse">
-			        <!-- .nav, .navbar-search, .navbar-form, etc -->
-			      </div>
+			<div class="span12">
+		<div id="sign-in">
+		        	<% if current_user %>
+		            <%= image_tag("#{current_user.image}", :height => '50', :width => '50') %>
+					<%= current_user.name %>
+					 <%= link_to "Sign out", signout_path %>
+					<% else %>
+					<%= image_tag("github.png", :height => '30', :width => '30') %>
+					 <%= link_to "Sign in with Github", "/auth/github" %>
+					<% end %>
 			    </div>
-			  </div>
-			</div>
+		<div class="row">	
+			<div class="span8 offset2 pagination-centered" id='header'>
+			  <p class="lead">use <span class="logo">Jog</span> to quickly save & recall code		
+				<span class='search'>
+		              <%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |form| %>
+					  <%= form.input :name, :url => @auto, :as => :autocomplete, :label => false, :placeholder => "Search here...", :'data-path' => @post_path %>
+				    <% end %>
+				</p>
+
 
 	  <% flash.each do |name, msg| %>
 	    <div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
@@ -51,11 +42,13 @@
 	      <%= msg  %>
 	    </div>
 	  <% end %>
-	    <div class="row">
-		<div class="span9"><%= yield %></div>
-		<div class="span3">
 
+       <%= yield %>
+	</div>
+	</div>
 		</div>
+	  </div>
+	</div>
 		<%= javascript_include_tag "application" %>
 
 		<script>
