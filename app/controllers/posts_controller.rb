@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.find(:all, :order => "updated_at desc", :limit => 10) #old - where(:user_id => current_user)
+    @posts = Post.find(:all, :order => "updated_at desc", :limit => 20) #old - where(:user_id => current_user)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
