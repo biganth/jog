@@ -7,6 +7,7 @@
 	<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
     <% else %>
     <%= image_tag("https://s3.amazonaws.com/freit5misc/blank.jpg", :align => 'right') %>
+<% end %>
     </th>
 	<!-- Modal -->
 	<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -18,7 +19,7 @@
 
 	  <%= render("posts/form") %></th>
   </tr>
-<% end %>
+
 
 <% @posts.each do |post| %>
 <tr>
