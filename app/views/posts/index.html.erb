@@ -3,8 +3,11 @@
     <th>Name</th>
     <th></th>
     <th><!-- Button to trigger modal -->
+	<% if current_user %>
 	<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
-
+    <% else %>
+    <%= image_tag("blank.jpg", :align => 'right') %>
+    </th>
 	<!-- Modal -->
 	<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
@@ -15,6 +18,7 @@
 
 	  <%= render("posts/form") %></th>
   </tr>
+<% end %>
 
 <% @posts.each do |post| %>
 <tr>
