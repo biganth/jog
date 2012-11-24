@@ -16,13 +16,21 @@
     width: 300px;
 }
 
+.img {
+	height: 40px;
+	width:  40px;
+	-webkit-border-radius: 99px;
+	-moz-border-radius: 99px;
+	border-radius: 99px;
+}
+
 #header {
 	margin-top: 30px;
 }
 
 #sign-in {
 	margin-top: 15px;
-	margin-left: 820px;
+	float: right;
 }
 
 .logo {

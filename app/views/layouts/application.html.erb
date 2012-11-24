@@ -15,27 +15,25 @@
 <div id='top_line'></div>
 	<div class="container">
 		<div class="row">
-			<div class="span12">
+			<div class="span8 offset2">
 		<div id="sign-in">
 		        	<% if current_user %>
-		            <%= image_tag("#{current_user.image}", :height => '50', :width => '50') %>
+		            <%= image_tag("#{current_user.image}", :class => 'img') %>
 					<%= current_user.name %>
 					 <%= link_to "Sign out", signout_path %>
 					<% else %>
-					<%= image_tag("github.png", :height => '30', :width => '30') %>
+					<%= image_tag('github.png') %>
 					 <%= link_to "Sign in with Github", "/auth/github" %>
 					<% end %>
 			    </div>
 		<div class="row">	
-			<div class="span8 offset2 pagination-centered" id='header'>
+			<div class="span8 pagination-centered" id='header'>
 			  <p class="lead">use <span class="logo">Jog</span> to quickly save & recall code		
 				<span class='search'>
-		              <%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |form| %>
-					  <%= form.input :name, :url => @auto, :as => :autocomplete, :label => false, :placeholder => "Search here...", :'data-path' => @post_path %>
+		           <%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |form| %>
+				   <%= form.input :name, :url => @auto, :as => :autocomplete, :label => false, :placeholder => "Search here...", :'data-path' => @post_path %>
 				    <% end %>
 				</p>
-
-
 	  <% flash.each do |name, msg| %>
 	    <div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
 		<a class="close" data-dismiss="alert">x</a>
@@ -47,8 +45,7 @@
 	</div>
 	</div>
 		</div>
-	  </div>
-	</div>
+
 		<%= javascript_include_tag "application" %>
 
 		<script>
