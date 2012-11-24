@@ -45,6 +45,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user
+    @post.user_image = current_user
 
     respond_to do |format|
       if @post.save
