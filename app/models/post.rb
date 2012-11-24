@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :users
+  validates :name, :content, presence: true
   attr_accessible :content, :name, :user_id
   after_save    :expire_post_all_cache
   after_destroy :expire_post_all_cache
