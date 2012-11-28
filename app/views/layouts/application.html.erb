@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jog</title>
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
   
   <%= stylesheet_link_tag  "application", :media => 'all' %>
   <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id='top_line'></div>
+      <div class="container">
+	    <div class="row">		
+          <div class="span8 offset2">
+			  
+			<div class="row">
+	        <div class="span8" id="tag">
+				<span class="sign-in pull-right">
+						<% if current_user %>
+						<%= image_tag("#{current_user.image}", :class => 'img') %>
+						<%= current_user.name %>
+						<%= link_to "Sign out", signout_path %>
+						<% else %>
+						<%= image_tag('github.png') %>
+						<%= link_to "Sign in", "/auth/github" %>
+						<% end %>
+				  </span>
+		      <span class="lead">use <span class="logo">Jog</span> to quickly save & recall code</span>
+	       
+				<div id ="search">
+	  			  <%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |form| %>
+	  			  <%= form.input :name, :url => @auto, :as => :autocomplete, :label => false, :class => 'form', :placeholder => "Search here...",  	:'data-path' => @post_path %>
+	  			  <% end %>		
+ 				</div>
+				<% flash.each do |name, msg| %>
+	  			<div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
+	  			  <a class="close" data-dismiss="alert">x</a>
+					<%= msg  %>
+	  			</div>
+				<% end %>
 
-   <body>
-<div id='top_line'></div>
-	<div class="container">
-		<div class="row">
-			<div class="span8 offset2">
-		<div id="sign-in">
-		        	<% if current_user %>
-		            <%= image_tag("#{current_user.image}", :class => 'img') %>
-					<%= current_user.name %>
-					 <%= link_to "Sign out", signout_path %>
-					<% else %>
-					<%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
-					 <%= link_to "Sign in with Github", "/auth/github" %>
-					<% end %>
-			    </div>
-		<div class="row">	
-			<div class="span8 pagination-centered" id='header'>
-			  <p class="lead">use <span class="logo">Jog</span> to quickly save & recall code		
-				<span class='search'>
-		           <%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |form| %>
-				   <%= form.input :name, :url => @auto, :as => :autocomplete, :label => false, :placeholder => "Search here...", :'data-path' => @post_path %>
-				    <% end %>
-				</p>
-	  <% flash.each do |name, msg| %>
-	    <div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
-		<a class="close" data-dismiss="alert">x</a>
-	      <%= msg  %>
+    			<%= yield %>
+          </div>
 	    </div>
-	  <% end %>
-
-       <%= yield %>
-	</div>
-	</div>
-		</div>
-
-		<%= javascript_include_tag "application" %>
-
-		<script>
-		Mousetrap.bind('n', function() { window.location = ('posts/new'); });
-		Mousetrap.bind('h', function() { window.location = ('/'); });
-		</script>
-
-</body>
+	  </div>
+  <%= javascript_include_tag "application" %>
+  <script>
+  Mousetrap.bind('n', function() { window.location = ('posts/new'); });
+  Mousetrap.bind('h', function() { window.location = ('/'); });
+  </script>
+  </body>
 </html>
