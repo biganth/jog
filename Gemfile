@@ -11,6 +11,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'rails_admin'
 gem 'simple_form'
 gem 'devise'
 gem 'cancan'

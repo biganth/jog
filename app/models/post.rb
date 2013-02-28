@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
+  belongs_to :sub_category
   has_many :users
-  validates :name, :content, presence: true
-  attr_accessible :content, :name, :user_id
+  validates :name, :content, :sub_category_id, :presence => true
+  attr_accessor :names
+  attr_accessible :content, :names
   after_save    :expire_post_all_cache
   after_destroy :expire_post_all_cache
   

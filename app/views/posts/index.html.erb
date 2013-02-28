@@ -1,14 +1,16 @@
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th><!-- Button to trigger modal -->
-	<% if current_user %>
+<div id ="search">
+<%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |f| %>
+<%= f.input :names, :html => {:autocomplete => "off"}, :url => autocomplete_name_posts_path, :as => :autocomplete, :label => false, :class => 'form', :placeholder => "Search here..." %>
+<% end %>
+</div>
+
+<!-- Button to trigger modal -->
+	<!-- <% if current_user %>
 	<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
     <% else %>
     <%= image_tag("https://s3.amazonaws.com/freit5misc/blank.jpg", :align => 'right') %>
-<% end %>
-    </th>
+<% end %> -->
+
 	<!-- Modal -->
 	<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
@@ -17,21 +19,21 @@
 	  </div>
 	  <div class="modal-body">
 
-	  <%= render("posts/form") %></th>
-  </tr>
+	  <%= render("posts/form") %>
 
 
 <% @posts.each do |post| %>
-<tr>
-    
-	<td><strong><%= on_the_spot_edit post, :name, :class => 'post-name' %></strong>
-	<br /><%= post.content %>
-    <td>
-	<td align"right">
-    <%= image_tag("#{post.user_image}", :class => "img", :align => 'right') %></td>
-  </tr>
+
+<div class="span12" id="wrap">
+       <h1>Sample Post <%= image_tag("#{post.user_image}", :class => "img", :align => 'right') %></h1>   
+        <p><strong><%= on_the_spot_edit post, :name, :class => 'post-name' %></strong>
+         <%= post.content %>
+       </p> 
+</div>
+<div class="gradient"></div>
 <% end %>
-</table>
 
-<br />
 
+</div>
+  </body>
+</html>

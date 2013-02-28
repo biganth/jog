@@ -14,27 +14,22 @@
     <div id='top_line'></div>
       <div class="container">
 	    <div class="row">		
-          <div class="span8 offset2">
+          <div class="span12">
 			  
 			<div class="row">
-	        <div class="span8" id="tag">
-				<span class="sign-in pull-right">
+	        <div class="span12" id="tag">
+				<span class="sign-in">
 						<% if current_user %>
 						<%= image_tag("#{current_user.image}", :class => 'img') %>
 						<%= current_user.name %>
-						<%= link_to "Sign out", signout_path %>
+						<br /><%= link_to "Sign out", signout_path %>
 						<% else %>
 						<%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
 						<%= link_to "Sign in", "/auth/github" %>
 						<% end %>
 				  </span>
 		      <span class="lead">use <span class="logo">Jog</span> to quickly save & recall code</span>
-	       
-				<div id ="search">
-	  			  <%= simple_form_for @post, :defaults => { :input_html => { :class => 'form' } } do |form| %>
-	  			  <%= form.input :name, :url => @auto, :as => :autocomplete, :label => false, :class => 'form', :placeholder => "Search here...",  	:'data-path' => @post_path %>
-	  			  <% end %>		
- 				</div>
+
 				<% flash.each do |name, msg| %>
 	  			<div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
 	  			  <a class="close" data-dismiss="alert">x</a>
@@ -51,5 +46,8 @@
   Mousetrap.bind('n', function() { window.location = ('posts/new'); });
   Mousetrap.bind('h', function() { window.location = ('/'); });
   </script>
-  </body>
-</html>
+
+
+
+
+

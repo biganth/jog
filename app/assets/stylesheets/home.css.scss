@@ -1,3 +1,7 @@
+body {
+	background: #f6f8f8;
+}
+
 #top_line {
   position: fixed;
   top: 0;
@@ -9,7 +13,7 @@
 }
 
 #tag {
-	margin: 20px;
+	margin: 20px 0px 0px 100px;
 
 }
 
@@ -30,7 +34,7 @@
 }
 
 .sign-in {
-	margin: 10px;
+	margin: 10px 135px;
 	float: right;
 }
 
@@ -43,5 +47,14 @@
 	color: #e70800;
 }
 
-.table tbody tr:hover td {   
+
+#wrap {  
+    margin: 5px 5px 5px auto;
+    display: box;
+    width: 300px;
+    height: 310px;
+    padding: 5px 20px 20px 20px;
+    background: #ffffff;
+    border: 1px solid #fff;
+    border-radius: 5px;
 }
