@@ -1,28 +1,28 @@
 class PostsController < ApplicationController
+  
   caches_action :index, :show, :expires_in => 15.seconds
-  autocomplete :post, :name
   can_edit_on_the_spot
   # GET /posts
   # GET /posts.json
-  def index
-    @posts = Post.find(:all, :order => "updated_at desc", :limit => 20) #old - where(:user_id => current_user)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-      format.csv { send_data Post.to_csv }
-   end
-  end
 
+  def index
+      @posts = Post.all
+        respond_to do |format|
+          format.html # show.html.erb
+          format.xml  { render :xml => @objectBs}
+        end
+      end
+    end
+      
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
-    end
   end
+end
 
   # GET /posts/new
   # GET /posts/new.json
@@ -83,6 +83,6 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to '/' }
       format.js
-    end
+    
   end
 end

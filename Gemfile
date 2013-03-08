@@ -10,6 +10,7 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.1.0.1'
 end
 
+gem 'coderay'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_admin'

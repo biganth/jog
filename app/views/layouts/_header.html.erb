@@ -1,0 +1,43 @@
+<div id='top_line'></div>
+<div class="container">
+ <div class="row-fluid">
+    <div class="span12" id="tag">
+	 <div class="row-fluid">
+	    <div class="span12">
+     <span class="sign-in">
+		 <% if current_user %>
+		<%= image_tag("#{current_user.image}", :class => 'img') %>
+		<%= current_user.name %>
+		<br /><%= link_to "Sign out", signout_path %>
+		<% else %>
+		<%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
+		<%= link_to "Sign in", "/auth/github" %>
+		<% end %>
+	</span>
+	<span class ="search">
+	 	
+     <%= form_tag @sub_categories_path do %>
+	<%= text_field_tag :search %>
+
+	  <% end %>	
+	</span>
+     <span>use <span class="logo"><%= link_to 'Jog', '/', :class => 'logo' %></span> to quickly save & recall code</span>
+   </div>
+		
+  <% flash.each do |name, msg| %>
+  	<div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
+  	  <a class="close" data-dismiss="alert">x</a>
+	  <%= msg  %>			
+
+
+<%= javascript_include_tag "application" %>
+<script>
+Mousetrap.bind('n', function() { window.location = ('posts/new'); });
+Mousetrap.bind('h', function() { window.location = ('/'); });
+</script>
+
+<% end %>
+
+<%= yield %>
+
+

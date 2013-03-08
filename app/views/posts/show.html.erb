@@ -1,15 +1,28 @@
+
+<div class="leftnav">
+	<h1 class="name"><%= @post.sub_category.name %></h1>
+<% @post.sub_category.posts.each do |post|%>
+<ul>
+	<li><%= link_to (post.name), post %></li>
+</ul><% end %>
+</div>  
+  
+
+	<div class="rightContent">
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
-  <%= best_in_place @post, :name %>
+  <%= @post.name %>
 </p>
 
 <p>
   <b>Content:</b>
-  <%= best_in_place @post, :content %>
+  <%= (@post.content) %>
 </p>
+</div>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+
+

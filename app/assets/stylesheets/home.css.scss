@@ -12,17 +12,29 @@ body {
   z-index: 2;
 }
 
-#tag {
-	margin: 20px 0px 0px 100px;
-
+#a.logo {
+	color: #e70800;
+	text-decoration: none;
 }
 
-#search {
-	margin: 10px 0px 0px;
+a:hover {
+	color: #e70800;
+	text-decoration: none;
+}
+
+
+#tag {
+	margin: 40px 0px 0px 120px;
+}
+
+.search {
+    margin: -30px 70px 0px 0px;
+    float: right;
 }
 
 .form {
-    width: 450px;
+	width: 450px;
+	margin: 30px 0px 0px 0px;
 }
 
 .img {
@@ -34,12 +46,12 @@ body {
 }
 
 .sign-in {
-	margin: 10px 135px;
+	margin: 6px 240px 0px 0px;
 	float: right;
 }
 
 .logo {
-	margin-top: 50px;
+	
 	letter-spacing: -1px;
 	font-family: 'Rokkitt', serif;
 	font-size: 52px;
@@ -47,14 +59,43 @@ body {
 	color: #e70800;
 }
 
+.name {
+	color: #e70800;
+	font-size: 28px
+}
 
 #wrap {  
-    margin: 5px 5px 5px auto;
-    display: box;
+    margin: 15px 15px 0px 0px;
     width: 300px;
     height: 310px;
-    padding: 5px 20px 20px 20px;
+    padding: 5px 20px 5px 20px;
     background: #ffffff;
     border: 1px solid #fff;
     border-radius: 5px;
+}
+
+div.leftnav {
+   margin: 15px 0px 0px 0px;
+   padding: 0px 0px 15px 10px;
+   min-height: 900px;
+   float: left;
+   width: 200px;
+   background: #ffffff;  
+   border: 1px solid #fff;
+   border-radius: 5px;
+}
+
+div.rightContent {
+   margin: 15px 0px 0px 0px;
+   padding: 0px 0px 15px 10px;
+   min-height: 900px;
+   width: 707px;
+   border-left: 1px solid gray;
+   float:left;
+   background: #ffffff;
+}
+
+h1.widget {
+	font-size: 28px;
+	color: #e70800;
 }

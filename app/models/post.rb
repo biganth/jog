@@ -1,9 +1,8 @@
 class Post < ActiveRecord::Base
   belongs_to :sub_category
-  has_many :users
+  belongs_to :users
   validates :name, :content, :sub_category_id, :presence => true
-  attr_accessor :names
-  attr_accessible :content, :names
+  attr_accessible :content, :name, :sub_category_id
   after_save    :expire_post_all_cache
   after_destroy :expire_post_all_cache
   
@@ -15,7 +14,7 @@ class Post < ActiveRecord::Base
         end
       end
     end
-  
+    
   def self.all_cached
     Rails.cache.fetch('Post.all') { all }
   end

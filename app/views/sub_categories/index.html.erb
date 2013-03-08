@@ -1,0 +1,13 @@
+
+<% @sub_category.each do |subcat| %>
+<div class="span12" id="wrap">
+	<h1 class="widget"><%= subcat.name %></h1>
+<% subcat.posts.each do |post| %>
+<p><%= link_to (post.name), post %></p><% end %> 
+</div>  
+  
+<% end %>
+
+
+</body>
+</html>

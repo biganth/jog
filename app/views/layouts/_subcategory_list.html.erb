@@ -1,0 +1,13 @@
+<% @sub_category.each do |subcat| %>
+<div class="leftnav">
+	<h1 class="name"><%= subcat.name %></h1>
+<% subcat.posts.each do |post| %>
+<ul>
+	<li><%= link_to (post.name), post %></li>
+</ul><% end %> 
+</div>  
+<h1><%= post.sub_category.name %></h1>
+
+</div>
+  
+<% end %>
