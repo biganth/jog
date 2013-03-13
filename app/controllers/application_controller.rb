@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_application_wide_varibales
   
   def load_application_wide_varibales   
-     @posts
+     
     def autocomplete
       autocomplete :post_search, { :post => [:name] }
     end

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jog</title>
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -9,13 +8,7 @@
   
   <%= stylesheet_link_tag  "application", :media => 'all' %>
 <%= javascript_include_tag "application" %>
-<script>
-$(function() {
-	$("#search").autocomplete({
-		source: "/sub_categories/list"
-	})
-});
-</script>
+
   <%= csrf_meta_tags %>
   </head>
   <body>

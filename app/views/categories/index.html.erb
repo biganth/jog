@@ -1,17 +1,17 @@
 <% @category.each do |subcat| %>
 <% subcat.posts.each do |post| %>
-<div class="span12" id="wrap">
-	<h1 class="name"><%= post.sub_category.name %></h1>
+	<div id="widgets">
+	     <div id="wrap">
+		   <h1 class="name"><%= post.sub_category.name %></h1>
 	<ul>
 		<li><%= post.name %></li>
 	</ul>
- </div>  
+ </div> 
+</div> 
 
 
 
 <% end %>	    
-<% end %>
-
 
 </body>
 </html>

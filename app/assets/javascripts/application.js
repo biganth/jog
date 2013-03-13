@@ -13,10 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
-//= require autocomplete-rails
 //= require on_the_spot
 //= require mousetrap
-//= require bootstrap
-//= require bootstrap-dropdown
-//= require bootstrap-typeahead
 //= require_tree .

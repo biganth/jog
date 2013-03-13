@@ -6,12 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-      @posts = Post.all
-        respond_to do |format|
-          format.html # show.html.erb
-          format.xml  { render :xml => @objectBs}
-        end
-      end
+     render json: Post.all
+   end
     end
       
   # GET /posts/1
