@@ -5,10 +5,19 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
 
-  def index
-     render json: Post.all
-   end
-    end
+
+   
+   def index
+    names =[]
+    all = Post.where("name LIKE ?", "#{params[:q]}%" )
+    render json: all.each { |post| names << {"label" => post.name} }
+  end
+end
+  
+ # def index
+  #   render json: Post.all
+   #end
+    #end
       
   # GET /posts/1
   # GET /posts/1.json

@@ -15,4 +15,6 @@
 //= require jquery-ui.min
 //= require on_the_spot
 //= require mousetrap
-//= require_tree .
+//= require typeahead
+//= require custom
+

@@ -3,10 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_application_wide_varibales
   
   def load_application_wide_varibales   
-     
-    def autocomplete
-      autocomplete :post_search, { :post => [:name] }
-    end
+   
     
     def show
         @post = Post.find(params[:id])
@@ -15,11 +12,11 @@ class ApplicationController < ActionController::Base
           format.json { render json: @post }
       end
     end 
+    
   def get_subcategory_and_post
    @sub_category = SubCategory.all
-  
   end
- end
+end
 
   
 class PostController < ActionController::Base

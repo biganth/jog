@@ -1,23 +1,10 @@
 Jog::Application.routes.draw do
-  get "category/index"
-
-  get "sub_categories/new"
-
-  get "sub_categories/create"
-
-  get "sub_categories/update"
-
-  get "sub_categories/edit"
-
-  get "sub_categories/destroy"
 
   get "sub_categories/index"
-
-  get "sub_categories/show"
+  
+  get "sub_categories/names"
 
   devise_for :users
-  
-  match 'sub_categories/list' => 'sub_categories#list'
 
   get   '/login', :to => 'sessions#new', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create'
