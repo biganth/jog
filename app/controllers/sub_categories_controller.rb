@@ -1,7 +1,7 @@
 class SubCategoriesController < ApplicationController
   def names
     names = []
-    all = Post.where("name like?", "#{params[:q]}%")
+    all = Post.where("name LIKE ? OR name LIKE ?", "#{params[:q]}%", "% #{params[:q]}%")
     all.each { |post| names << post.name }
 
     render json: names
