@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  skip_before_filter :verify_authenticity_token
   before_filter :load_application_wide_varibales
   
   def load_application_wide_varibales   
