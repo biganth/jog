@@ -1,25 +1,29 @@
-
-<div class="leftnav">
-	<h1 class="name"><%= @post.sub_category.name %></h1>
+<div id="breadcrumbs"><%= render_breadcrumbs :separator => ' / ' %></div>
+<div id="post">
+	<div class="leftnav">
+		
+<h1 class="name"><%= @post.sub_category.name %></h1>
 <% @post.sub_category.posts.each do |post|%>
 <ul>
-	<li><%= link_to (post.name), post %></li>
-</ul><% end %>
-</div>  
-  
+	<li><%= link_to  (post.name), post %></li>
+</ul>
 
-	<div class="rightContent">
+<% end %>
+</div>
+
+<div class="rightContent">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h1 class="name">
   <%= @post.name %>
-</p>
+</h1>
 
 <p>
-  <b>Content:</b>
-  <%= (@post.content) %>
+
+<%= raw Pygments.highlight(@post.content) %>
 </p>
+</div>
+
 </div>
 
 

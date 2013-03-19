@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.12'
 gem 'pg'
 
 group :assets do
@@ -9,7 +9,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'coderay'
+gem 'breadcrumbs_on_rails'
+gem 'pygments.rb'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_admin'

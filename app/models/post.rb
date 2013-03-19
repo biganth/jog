@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
   attr_accessible :content, :name, :sub_category_id
   after_save    :expire_post_all_cache
   after_destroy :expire_post_all_cache
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+  
+  Post.order(:name)
   
   def self.to_csv(options = {})
       CSV.generate(options) do |csv|

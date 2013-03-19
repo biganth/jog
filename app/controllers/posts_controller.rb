@@ -1,19 +1,8 @@
 class PostsController < ApplicationController
   
-  caches_action :index, :show, :expires_in => 15.seconds
+  add_breadcrumb "<- back home", :root_path
   can_edit_on_the_spot
-  # GET /posts
-  # GET /posts.json
 
-
-   
-   def index
-    names =[]
-    all = Post.where("name LIKE ?", "#{params[:q]}%" )
-    render json: all.each { |post| names << {"label" => post.name} }
-  end
-end
-  
  # def index
   #   render json: Post.all
    #end
@@ -23,10 +12,13 @@ end
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    if request.path != post_path(@post)
+        redirect_to @post, status: :moved_permanently
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
   end
+end
 end
 
   # GET /posts/new
@@ -90,4 +82,5 @@ end
       format.js
     
   end
+end
 end
