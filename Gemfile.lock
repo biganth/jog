@@ -228,6 +228,7 @@ DEPENDENCIES
   pygments.rb
   rails (= 3.2.12)
   rails_admin
+  safe_yaml
   sass-rails (~> 3.2.5)
   simple_form
   thin

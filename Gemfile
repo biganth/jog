@@ -9,6 +9,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'safe_yaml'
 gem 'breadcrumbs_on_rails'
 gem 'pygments.rb'
 gem 'jquery-rails'
