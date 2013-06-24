@@ -1,16 +1,16 @@
 <div id='top_line'></div>
   <div id="container">
 	 <div id="sign-in">
-		<span class="sign-in">
-		 <% if current_user %>
-		<%= image_tag("#{current_user.image}", :class => 'img') %>
-		<%= current_user.name %>
-		<br /><%= link_to "Sign out", signout_path %>
-		<% else %>
-		<%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
-		<%= link_to  "Sign in", "http://jog.io/auth/github" %>
-		<% end %>
-	</span></div>
+				<span class="sign-in">
+				 <% if current_user %>
+				<%= image_tag("#{current_user.image}", :class => 'img') %>
+				<%= current_user.name %>
+				<br /><%= link_to "Sign out", signout_path %>
+				<% else %>
+				<%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
+				<%= link_to  "Sign in", "http://www.jog.io/auth/github" %>
+				<% end %>
+			</span></div>
 	
 	<div id="header">
 	    <span id="tag">use</span>
@@ -18,7 +18,9 @@
 	        <span id="tag2">to quickly save & recall code</span></div>
 			<div class="demo">	
 				
+			<form id="search_form" action="/listings/search" method="get">	
 	          <input class="typeahead" type ="text" placeholder="Search here...">
+			</form>
 			
 		       </div>		
   <% flash.each do |name, msg| %>

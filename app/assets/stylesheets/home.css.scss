@@ -1,5 +1,5 @@
 body {
-	background: #f6f8f8;
+	background: #f2f2f2;
 }
 
 #top_line {
@@ -14,13 +14,26 @@ body {
 
 #container
 {
-	max-width: 1160px;
+	max-width: 1240px;
 	margin: 0px auto;
 }
 
-#sign-in{
-	margin: 20px 0 0 1035px;
+#sign-in {
+	margin: 20px 0 0 1034px;
 	text-decoration: none;
+}
+
+.sign-in {
+	font-size: 14px;
+	vertical-align: bottom;
+}
+
+.img {
+	height: 50px;
+	width:  50px;
+	-webkit-border-radius: 99px;
+	-moz-border-radius: 99px;
+	border-radius: 99px;
 }
 
 #header {
@@ -60,8 +73,7 @@ body {
 }
 
 #widgets {
-	margin: 15px 15px 15px 15px;
-	text-align: center;
+	margin: 15px 0px 15px 53px;
 }
 
 #breadcrumbs {
@@ -72,14 +84,33 @@ body {
 #wrap {  
     margin: 15px 15px 0px -5px;
     text-align: left;
-    width: 300px;
+    width: 330px;
     height: 300px;
     padding: 1px 20px 20px 20px;
     background: #ffffff;
-    border: 1px solid #fff;
     border-radius: 5px;
     display: inline-block;
     vertical-align: top;
+	border: 1px solid #ccc;
+	  -webkit-border-radius: 8px;
+	     -moz-border-radius: 8px;
+	          border-radius: 8px;
+	  outline: none;
+}
+
+#about {  
+	margin: 0px auto;
+	width: 65%;
+    height: 600px;
+    padding: 1px 20px 20px 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    vertical-align: top;
+	border: 1px solid #ccc;
+	  -webkit-border-radius: 8px;
+	     -moz-border-radius: 8px;
+	          border-radius: 8px;
+	  outline: none;
 }
 
 #a.logo {
@@ -101,10 +132,6 @@ a:hover {
 
 a:active { 
 	padding-top: 2px; 
-}
-
-.sign-in {
-	font-size: 14px;
 }
 
 a {
@@ -141,14 +168,6 @@ li {
 	margin: 30px 0px 0px 0px;
 }
 
-.img {
-	height: 40px;
-	width:  40px;
-	-webkit-border-radius: 99px;
-	-moz-border-radius: 99px;
-	border-radius: 99px;
-}
-
 
 .name {
 	font-size: 28px;
@@ -158,29 +177,34 @@ li {
 
 #post {
 	margin: 0px auto;
-	width: 1150px
 }
 
 div.leftnav {
-   margin: 15px 0px 0px 0px;
+   margin: 15px auto;
    padding: 0px 0px 10px 10px;
    min-height: 900px;
    float: left;
    width: 300px;
    background: #ffffff;  
-   border: 1px solid #fff;
-   border-radius: 5px;
+   border: 1px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
 }
 
 div.rightContent {
-   margin: 15px 0px 0px 0px;
+   margin: 15px 0px 0px 10px;
    padding: 0px 0px 15px 20px;
    min-height: 900px;
-   width: 750px;
-   border-left: 4px solid #F5F5F5;
-   float:left;
+   float: left;
+   width: 814px;
    background: #ffffff;
-   border-radius: 5px;
+   border: 1px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
 }
 
 @media screen and (min-width:600px) {

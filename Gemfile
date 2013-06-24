@@ -28,4 +28,5 @@ gem 'on_the_spot'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'nifty-generators', :group => :development
 gem 'mocha', :group => :test
-gem 'newrelic_rpm'
+gem 'swiftype'
+gem 'delayed_job_active_record'

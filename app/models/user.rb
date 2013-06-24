@@ -3,12 +3,11 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable
+         :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :image, :email, :password, :password_confirmation, :remember_me
   has_many :posts
-  attr_accessible :name, :image, :email
   
   def self.from_omniauth(auth)
       where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
