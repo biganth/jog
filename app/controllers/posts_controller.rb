@@ -2,6 +2,11 @@ class PostsController < ApplicationController
   
   add_breadcrumb "<- back home", :root_path
   can_edit_on_the_spot
+  
+  attr_accessible :title, :body
+  
+  after_save :enqueue_create_or_update_document_job
+  after_destroy :enqueue_delete_document_job
 
  # def index
   #   render json: Post.all
@@ -82,9 +87,6 @@ end
       format.js
   end
  end
- 
- after_save :enqueue_create_or_update_document_job
-  after_destroy :enqueue_delete_document_job
 
   private
 
