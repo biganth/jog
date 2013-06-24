@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   add_breadcrumb "<- back home", :root_path
   can_edit_on_the_spot
   
-  attr_accessible :title, :body
+  attr_accessible :name, :content
   
   after_save :enqueue_create_or_update_document_job
   after_destroy :enqueue_delete_document_job
