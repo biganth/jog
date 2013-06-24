@@ -3,8 +3,8 @@ class Post < ActiveRecord::Base
   belongs_to :users
   validates :name, :content, :sub_category_id, :presence => true
   attr_accessible :content, :name, :sub_category_id
-  after_save    :expire_post_all_cache
-  after_destroy :expire_post_all_cache
+  after_save    :expire_post_all_cache, :enqueue_create_or_update_document_job
+  after_destroy :expire_post_all_cache, :enqueue_delete_document_job
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
   
@@ -26,4 +26,15 @@ class Post < ActiveRecord::Base
   def expire_post_all_cache
     Rails.cache.delete('Post.all')
   end
+
+    private
+
+    def enqueue_create_or_update_document_job
+      Delayed::Job.enqueue CreateOrUpdateSwiftypeDocumentJob.new(self.id)
+    end
+
+    def enqueue_delete_document_job
+      Delayed::Job.enqueue DeleteSwiftypeDocumentJob.new(self.id)
+    end
+    
 end
