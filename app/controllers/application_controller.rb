@@ -30,13 +30,16 @@ end
 class PostController < ActionController::Base
   before_filter :get_subcategory_and_post, only: [:show]
 
-  def show
-    @post = Post.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @post }
+    def show
+      @post = Post.find(params[:id])
+      if request.path != post_path(@post)
+          redirect_to @post, status: :moved_permanently
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @post }
+    end
+   end
   end
-end
   
   class SubCategoryController < ActionController::Base
     before_filter :get_subcategory_and_post

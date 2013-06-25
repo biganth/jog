@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @post }
   end
-end
+ end
 end
 
   # GET /posts/new

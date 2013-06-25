@@ -14,14 +14,13 @@
   <body>
     <%= render 'layouts/header' %>
 
-<script type="text/javascript">
-	$(function() {
-	  $('#typeahead').swiftype({
-		suggestFields: 'name',
-	    engineKey: '<%= ENV['SWIFTYPE_ENGINE_KEY'] %>'
-	  });
-	});
-</script>
+	<script type="text/javascript">
+		$(function() {
+		  $('#typeahead').swiftype({
+		    engineKey: '<%= ENV['SWIFTYPE_ENGINE_KEY'] %>'
+		  });
+		});
+	</script>
 
 </body>
 </html>

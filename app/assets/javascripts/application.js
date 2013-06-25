@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
-//= require jquery.swiftype.autocomplete.js
+//= require jquery.swiftype.autocomplete
 //= require on_the_spot
 //= require mousetrap
 //= require typeahead
+//= require_tree .
 
