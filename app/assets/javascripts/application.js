@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
-//= require jquery.swiftype.autocomplete
+//= require jquery.swiftype.autocomplete.js
 //= require on_the_spot
 //= require mousetrap
 //= require typeahead
