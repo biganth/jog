@@ -1,6 +1,15 @@
 class ApplicationController < ActionController::Base
-  
   before_filter :load_application_wide_varibales
+  protect_from_forgery
+  
+  private
+   def current_user
+     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+   end
+     helper_method :current_user
+   end
+  
+  
   
   def load_application_wide_varibales   
     
@@ -31,13 +40,6 @@ end
   
   class SubCategoryController < ActionController::Base
     before_filter :get_subcategory_and_post
-  end
-  
-  private
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-    helper_method :current_user
   end
 
 end

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '3.2.12'
 gem 'pg'
 
@@ -9,12 +11,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'safe_yaml'
 gem 'breadcrumbs_on_rails'
 gem 'pygments.rb'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'rails_admin'
 gem 'simple_form'
 gem 'devise'
 gem 'cancan'

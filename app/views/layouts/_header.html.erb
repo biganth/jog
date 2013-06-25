@@ -18,9 +18,11 @@
 	        <span id="tag2">to quickly save & recall code</span></div>
 			<div class="demo">	
 				
-			<form id="search_form" action="/listings/search" method="get">	
-	          <input class="typeahead" type ="text" placeholder="Search here...">
-			</form>
+				<form>
+				  <input type='text' id='typeahead' class='typeahead' placeholder="Search here..."/>
+				</form>
+				
+			
 			
 		       </div>		
   <% flash.each do |name, msg| %>
