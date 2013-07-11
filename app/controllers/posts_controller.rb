@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   
   add_breadcrumb "<- back home", :root_path
-  can_edit_on_the_spot
 
  # def index
   #   render json: Post.all

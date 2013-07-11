@@ -2,10 +2,10 @@
 <div id="post">
 	<div class="leftnav">
 		
-<h1 class="name"><%= @post.sub_category.name %></h1>
+<h1 class="name"><%= @post.title %></h1>
 <% @post.sub_category.posts.each do |post|%>
 <ul>
-	<li><%= link_to  (post.name), post %></li>
+	<li><%= link_to  (post.title), post %></li>
 </ul>
 
 <% end %>
@@ -15,7 +15,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="name">
-  <%= @post.name %>
+  <%= @post.title %>
 </h1>
 
 <p>
