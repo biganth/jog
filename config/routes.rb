@@ -6,8 +6,6 @@ Jog::Application.routes.draw do
   
   get "sub_categories/names"
 
-  devise_for :users
-
   #get   '/login', :to => 'sessions#new', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure', notice: "Auth failure"

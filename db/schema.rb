@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624024855) do
+ActiveRecord::Schema.define(:version => 20130711140103) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130624024855) do
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "posts", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at",      :null => false

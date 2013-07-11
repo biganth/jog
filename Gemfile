@@ -11,13 +11,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'json', '~> 1.8.0'
 gem 'breadcrumbs_on_rails'
 gem 'pygments.rb'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'simple_form'
-gem 'devise'
-gem 'cancan'
 gem 'friendly_id'
 gem 'thin'
 gem 'client_side_validations'

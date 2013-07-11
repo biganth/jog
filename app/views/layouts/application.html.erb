@@ -14,9 +14,10 @@
   <body>
     <%= render 'layouts/header' %>
 
+
 	<script type="text/javascript">
 		$(function() {
-		  $('#typeahead').swiftype({
+		  $('#st-search-input').swiftype({
 		    engineKey: '<%= ENV['SWIFTYPE_ENGINE_KEY'] %>'
 		  });
 		});
