@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  add_breadcrumb "<- back home", :root_path
+  add_breadcrumb "<-- back home", :root_path
 
  # def index
   #   render json: Post.all
@@ -41,7 +41,7 @@ end
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user
-    @post.user_image = current_user.image
+    #@post.user_image = current_user.image
 
     respond_to do |format|
       if @post.save

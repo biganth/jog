@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.swiftype.autocomplete
+//= require bootstrap
 //= require on_the_spot
 //= require mousetrap
 //= require typeahead

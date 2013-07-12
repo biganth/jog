@@ -1,14 +1,14 @@
 class Post < ActiveRecord::Base
   belongs_to :sub_category
   belongs_to :users
-  validates :name, :content, :sub_category_id, :presence => true
-  attr_accessible :content, :name, :sub_category_id
+  validates :title, :content, :sub_category_id, :presence => true
+  attr_accessible :content, :title, :sub_category_id
   after_save    :expire_post_all_cache, :enqueue_create_or_update_document_job
   after_destroy :expire_post_all_cache, :enqueue_delete_document_job
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :history]
+  friendly_id :title, use: [:slugged, :history]
   
-  Post.order(:name)
+  Post.order(:title)
   
   def self.to_csv(options = {})
       CSV.generate(options) do |csv|

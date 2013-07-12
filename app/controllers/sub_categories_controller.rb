@@ -11,6 +11,7 @@ class SubCategoriesController < ApplicationController
 
   def index
     @sub_category = SubCategory.all
+    @post = Post.new
   end
 
 end
