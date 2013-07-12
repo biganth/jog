@@ -5,7 +5,7 @@
 <h1 class="name"><%= @post.sub_category.name %></h1>
 <% @post.sub_category.posts.each do |post|%>
 <ul>
-	<li><%= link_to  (post.title), post %></li>
+	<li><%= link_to  (post.title.downcase), post %></li>
 </ul>
 
 <% end %>

@@ -39,7 +39,7 @@ end
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(params[:post.downcase])
     # Error on Heroku: NoMethodError (undefined method `to_i' for #<User:0x007ffdabd21be8>):
     #@post.user_id = current_user 
     #@post.user_image = current_user.image
