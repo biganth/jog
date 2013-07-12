@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :load_application_wide_varibales
+ 
   protect_from_forgery
   
   private
@@ -12,37 +13,18 @@ class ApplicationController < ActionController::Base
   
   
   def load_application_wide_varibales   
-    
-    def show
-        @post = Post.find(params[:id])
-        respond_to do |format|
-          format.html # show.html.erb
-          format.json { render json: @post }
+
+        def show
+            @post = Post.find(params[:id])
+            respond_to do |format|
+              format.html # show.html.erb
+              format.json { render json: @post }
+          end
+        end 
+
+      def get_subcategory_and_post
+       @sub_category = SubCategory.find(params[:id])
       end
-    end 
-    
-  def get_subcategory_and_post
-   @sub_category = SubCategory.all
-  end
-end
-
-  
-class PostController < ActionController::Base
-  before_filter :get_subcategory_and_post, only: [:show]
-
-    def show
-      @post = Post.find(params[:id])
-      if request.path != post_path(@post)
-          redirect_to @post, status: :moved_permanently
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @post }
     end
-   end
-  end
   
-  class SubCategoryController < ActionController::Base
-    before_filter :get_subcategory_and_post
-  end
 
-end

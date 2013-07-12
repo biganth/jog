@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :sub_category
   belongs_to :users
   validates :title, :content, :sub_category_id, :presence => true
-  attr_accessible :content, :title, :sub_category_id
+  attr_accessible :content, :title, :sub_category_id, :sub_category_name
   after_save    :expire_post_all_cache, :enqueue_create_or_update_document_job
   after_destroy :expire_post_all_cache, :enqueue_delete_document_job
   extend FriendlyId
