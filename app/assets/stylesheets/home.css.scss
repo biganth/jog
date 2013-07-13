@@ -19,13 +19,9 @@ body {
 }
 
 #sign-in {
-	margin: 20px 0 0 1034px;
-	text-decoration: none;
-}
-
-.sign-in {
+	margin: 0 0 0 325px;
 	font-size: 14px;
-	vertical-align: bottom;
+	text-align: right;
 }
 
 .img {
@@ -37,12 +33,12 @@ body {
 }
 
 #header {
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0 10px 395px;
 	text-align: center;
 }
 
 #tag {
-	margin: 0 0 20px 0;
+	margin: 0 0px 20px 0;
 	text-align: center;
 	font-family: 'Tauri', sans-serif;
 }
@@ -77,7 +73,7 @@ body {
 }
 
 #breadcrumbs {
-	margin: 0 10px;
+	margin: 0 0 0 40px;
 	font-size: 12px;
 }
 
@@ -150,7 +146,7 @@ li {
 	line-height: 125%;
 }
 
-.typeahead {
+.twitter-typeahead {
   width: 396px;
   height: 30px;
   padding: 8px 12px;
@@ -170,6 +166,7 @@ li {
 
 
 .name {
+	margin: 10px 0 5px 0;
 	font-size: 28px;
 	font-family: 'Tauri', sans-serif;
 	color: #e70800;
@@ -180,7 +177,7 @@ li {
 }
 
 div.leftnav {
-   margin: 15px auto;
+   margin: 15px 0 0 40px;
    padding: 0px 0px 10px 10px;
    min-height: 900px;
    float: left;

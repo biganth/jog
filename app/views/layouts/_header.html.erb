@@ -1,47 +1,40 @@
 <div id='top_line'></div>
   <div id="container">
-	 
-	 <div id="sign-in">
-				<span class="sign-in">
-				 <% if current_user %>
-				<%= image_tag("#{current_user.image}", :class => 'img') %>
-				<%= current_user.name %>
-				<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
-				<br /><%= link_to "Sign out", signout_path %>
-				<% else %>
-				<%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
-				<%= link_to  "Sign in", "http://www.jog.io/auth/github" %>
-				<% end %>
-			</span></div>
-	
 	<div id="header">
-	    <span id="tag">use</span>
-	     <span id="logo"><a href="/" id="logo">Jog</a></span>
-	        <span id="tag2">to quickly save & recall code</span></div>
-			<div class="demo">	
-				
-				<form>
-				  <input type='text' id='typeahead' class='typeahead' placeholder="Search here..."/>
-				</form>
-
-		       </div>
-		
-				<div id="myModal" class="modal hide" style="display: none; ">
-				  <div class="modal-header">
-				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				    <h3 id="myModalLabel">Add your code/commands</h3>
-				  </div>
+	  <span id="tag">use</span>
+	    <span id="logo"><a href="/" id="logo">Jog</a></span>
+	      <span id="tag2">to quickly save & recall code</span>
+	        <span id="sign-in">
+			  <% if current_user %>
+			  <%= image_tag("#{current_user.image}", :class => 'img') %>
+			  <%= current_user.name %>
+			  <a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
+			  <br /><%= link_to "Sign out", signout_path %>
+			  <% else %>
+			  <%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
+			  <%= link_to  "Sign in", "http://www.jog.io/auth/github" %>
+			  <% end %>
+		    </span>
+		  </div>
+			<div class="demo">			
+		      <form>
+			    <input type='text' id='twitter-typeahead' class='twitter-typeahead' placeholder="Search here..."/>
+			  </form>
+		    </div>
+			  <div id="myModal" class="modal hide" style="display: none; ">
+			    <div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				  <h3 id="myModalLabel">Add your code/commands</h3>
+				</div>
 				  <div class="modal-body">
-
-				  <%= render("posts/form") %>
-	       </div>		
+				    <%= render("posts/form") %>
+	              </div>		
   <% flash.each do |name, msg| %>
   	<div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
   	  <a class="close" data-dismiss="alert">x</a>
 	  <%= msg  %>			
 <% end %>
 </div>
-
 <%= yield %>
 
 

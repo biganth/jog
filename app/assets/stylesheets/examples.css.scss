@@ -68,7 +68,7 @@ p {
   text-align: center;
 }
 
-.typeahead,
+.twitter-typeahead,
 .tt-query,
 .tt-hint {
   width: 396px;
@@ -83,11 +83,11 @@ p {
   outline: none;
 }
 
-.typeahead {
+.twitter-typeahead {
   background-color: #fff;
 }
 
-.typeahead:focus {
+.twitter-typeahead:focus {
   border: 2px solid #0097cf;
 }
 
