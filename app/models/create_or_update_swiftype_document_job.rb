@@ -1,7 +1,7 @@
 class CreateOrUpdateSwiftypeDocumentJob < Struct.new(:post_id)
   def perform
     post = Post.find(post_id)
-    url = Rails.application.routes.url_helpers.post_url(post, :host => "localhost:5000")
+    url = Rails.application.routes.url_helpers.post_url(post, :host => "jog.io")
     client = Swiftype::Easy.new
     client.create_or_update_document(ENV['SWIFTYPE_ENGINE_SLUG'],
                                      Post.model_name.downcase,

@@ -11,7 +11,7 @@ task :index_posts => :environment do
 
   Post.find_in_batches(:batch_size => 100) do |posts|
     documents = posts.map do |post|
-      url = Rails.application.routes.url_helpers.post_url(post, :host => "localhost:5000")
+      url = Rails.application.routes.url_helpers.post_url(post, :host => "jog.io")
       {:external_id => post.id,
        :fields => [{:name => 'title', :value => post.title, :type => 'string'},
                    {:name => 'content', :value => post.content, :type => 'text'},
