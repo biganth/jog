@@ -8,7 +8,8 @@
 			  <% if current_user %>
 			  <%= image_tag("#{current_user.image}", :class => 'img') %>
 			  <%= current_user.name %>
-			  <a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">New</a>
+			  <br />
+			  <a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Add code</a>
 			  <br /><%= link_to "Sign out", signout_path %>
 			  <% else %>
 			  <%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
@@ -16,6 +17,7 @@
 			  <% end %>
 		    </span>
 		  </div>
+		<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Add code</a>
 			<div class="demo">			
 		      <form>
 			    <input type='text' id='twitter-typeahead' class='twitter-typeahead' placeholder="Search here..."/>
@@ -29,12 +31,13 @@
 				  <div class="modal-body">
 				    <%= render("posts/form") %>
 	              </div>		
-  <% flash.each do |name, msg| %>
+</div>
+
+<% flash.each do |name, msg| %>
   	<div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
   	  <a class="close" data-dismiss="alert">x</a>
-	  <%= msg  %>			
+	  <%= msg  %>	</div>		
 <% end %>
-</div>
-<%= yield %>
+
 
 

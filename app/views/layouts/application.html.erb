@@ -12,16 +12,10 @@
   <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-
-
-	<script type="text/javascript">
-		$(function() {
-		  $('#twitter-typeahead').swiftype({
-		    engineKey: '<%= ENV['SWIFTYPE_ENGINE_KEY'] %>'
-		  });
-		});
-	</script>
-
-</body>
+	<%= render 'layouts/header' %>
+    <%= yield %>
+        <%= render 'layouts/footer' %>
+  </body>
 </html>
+			
+			
