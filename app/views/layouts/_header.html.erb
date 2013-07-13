@@ -12,12 +12,12 @@
 			  <a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Add code</a>
 			  <br /><%= link_to "Sign out", signout_path %>
 			  <% else %>
-			  <%= image_tag('https://s3.amazonaws.com/freit5misc/github.png') %>
+			  <%= image_tag('https://s3.amazonaws.com/freit5misc/github_icon.png', :class => 'img') %>
 			  <%= link_to  "Sign in", "http://www.jog.io/auth/github" %>
 			  <% end %>
 		    </span>
 		  </div>
-		<a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Add code</a>
+		
 			<div class="demo">			
 		      <form>
 			    <input type='text' id='twitter-typeahead' class='twitter-typeahead' placeholder="Search here..."/>
