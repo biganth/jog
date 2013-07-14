@@ -2,7 +2,7 @@
   <div id="container">
 	<div id="sign-in">
 	    <% if current_user %>
-		<strong>Hi</strong><%= current_user.name %>
+		<strong>Hi </strong><%= "#{current_user.name}" %>
 		<%= image_tag("#{current_user.image}", :class => 'img') %>
 		<hr></hr>
 	    <p align ="center"><a href="#myModal" data-toggle="modal">add code</a> |
