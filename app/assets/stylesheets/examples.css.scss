@@ -64,8 +64,9 @@ p {
 .demo {
   position: relative;
   *z-index: 1;
-  margin: 30px 0px 30px 0px;
+  margin: 30px 0px 30px 220px;
   text-align: center;
+  width: 800px;
 }
 
 .twitter-typeahead,

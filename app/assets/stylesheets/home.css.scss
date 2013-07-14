@@ -18,23 +18,33 @@ body {
 	margin: 0px auto;
 }
 
+#sign-in-text {
+	margin: 0 46px 0 0;
+	font-size: 15px;
+	float: right;
+	text-align: right;
+}
+
 #sign-in {
-	margin: 0 0 0 295px;
-	font-size: 14px;
+	margin: 0 46px 0 0;
+	font-size: 15px;
+	float: right;
 	text-align: right;
 }
 
 .img {
 	height: 50px;
 	width:  50px;
+	vertical-align: middle;
 	-webkit-border-radius: 99px;
 	-moz-border-radius: 99px;
 	border-radius: 99px;
 }
 
 #header {
-	margin: 10px 0 10px 390px;
+	margin: 20px 0 10px 370px;
 	text-align: center;
+	width: 500px;
 }
 
 #tag {
