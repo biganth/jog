@@ -12,7 +12,7 @@ Authorization:
 Omniauth-github
 
 Pretty urls: 
-Frindly ID
+Friendly ID
 
 Autocomplete search:
 Swiftype
