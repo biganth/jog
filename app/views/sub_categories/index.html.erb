@@ -2,7 +2,7 @@
 <% @sub_category.each do |subcat| %>
     <div id="wrap">
       <h1 class="name" ><%= subcat.name %></h1>
-        <% subcat.posts.each do |post| %>
+        <% subcat.posts.limit(12).each do |post| %>
          <li><%= link_to (post.title.downcase), post %></li> <% end %>
     </div>  <% end %>
    </div>  
