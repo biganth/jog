@@ -1,7 +1,7 @@
 <% @sub_category.each do |subcat| %>
 <div class="leftnav">
 	<h1 class="name"><%= subcat.name %></h1>
-<% subcat.posts.each do |post| %>
+<% subcat.posts.each(:order => 'title', :limit => 12) do |post| %>
 <ul>
 	<li><%= link_to (post.name), post %></li>
 </ul><% end %> 

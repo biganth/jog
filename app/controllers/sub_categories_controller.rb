@@ -10,7 +10,7 @@ class SubCategoriesController < ApplicationController
   end
 
   def index
-    @sub_category = SubCategory.all
+    @sub_category = SubCategory.all(:order => "name")
     @post = Post.new
   end
 

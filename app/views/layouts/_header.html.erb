@@ -1,44 +1,46 @@
 <div id='top_line'></div>
   <div id="container">
 	<% if current_user %>
-	<div id="sign-in">
-		<strong>Hi </strong><%= "#{current_user.name}" %>
+	  <div id="sign-in">
+	    <strong>Hi </strong><%= "#{current_user.name}" %>
 		<%= image_tag("#{current_user.image}", :class => 'img') %>
 		<hr></hr>
 	    <p align ="center"><a href="#myModal" data-toggle="modal">add code</a> |
 	    <%= link_to "sign out", signout_path %></p>
-	</div>
-		<% else %>
-		<div id="sign-in">
-	      <%= link_to  "Sign in", "http://www.jog.io/auth/github" %>
-	      <%= image_tag('https://s3.amazonaws.com/freit5misc/github_icon.png', :class => 'img') %>
-	    </div>
-	  <% end %>
-	<div id="header">
-	  <span id="tag">use</span>
+	  </div>
+	
+	<% else %>
+	  <div id="sign-in">
+	    <%= link_to  "Sign in", "http://www.jog.io/auth/github" %>
+	    <%= image_tag('https://s3.amazonaws.com/freit5misc/github_icon.png', :class => 'img') %>
+	  </div>
+	<% end %>
+	
+	  <div id="header">
+	    <span id="tag">use</span>
 	    <span id="logo"><a href="/" id="logo">Jog</a></span>
-	      <span id="tag2">to quickly save & recall code</span>
-    </div>		
+	    <span id="tag2">to quickly save & recall code</span>
+      </div>
+		
       <div class="demo">			
 	    <form>
 	      <input type='text' id='twitter-typeahead' class='twitter-typeahead' placeholder="Search here..."/>
 	    </form>
 	  </div>
 
-        <div id="myModal" class="modal hide" style="display: none; ">
-	      <div class="modal-header">
-		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			  <h3 id="myModalLabel">Add your code/commands</h3>
-		  </div>
+      <div id="myModal" class="modal hide" style="display: none; ">
+	    <div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		  <h3 id="myModalLabel">Add your code/commands</h3>
+		</div>
 			
-		  <div class="modal-body">
-		    <%= render("posts/form") %>
-	      </div>		              
-        </div>
+		<div class="modal-body">
+		  <%= render("posts/form") %>
+	    </div>		              
+      </div>
 
-            <% flash.each do |name, msg| %>
-  	          <div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
-	            <%= msg  %>	
-	          </div>		
-              <% end %>
-
+      <% flash.each do |name, msg| %>
+  	  <div class="alert fade in alert-<%= name == :notice ? "success" : "error" %>">
+	    <%= msg  %>	
+	  </div>		
+      <% end %>
