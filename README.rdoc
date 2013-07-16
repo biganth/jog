@@ -1,6 +1,6 @@
 ==Welcome to Jog
 
-Jog is a simple app that let's you quickly look up code snippets & commands that you've saved.
+Jog is a simple app that let's you quickly recall code snippets & commands that you've saved.
 
 Database: 
 Postgres
@@ -9,19 +9,10 @@ Framework:
 Bootstrap-Sass
 
 Authorization: 
-Devise & Cancan
-
-In place editing: 
-On the Spot
-
-Caching: 
-Dalli
-
-Keyboard shortcuts: 
-Moustrap
+Omniauth-github
 
 Pretty urls: 
 Frindly ID
 
-Validations: 
-Client side validations
+Autocomplete search:
+Swiftype
